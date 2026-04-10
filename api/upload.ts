@@ -5,7 +5,9 @@ import { extractExercisesFromPDF } from '../src/lib/groq';
 import { supabase } from '../src/lib/supabase';
 
 const require = createRequire(import.meta.url);
-const pdfParse = require('pdf-parse');
+// Use the lib entry point to skip pdf-parse's self-test which reads a local
+// test file that doesn't exist in the Vercel deployment bundle.
+const pdfParse = require('pdf-parse/lib/pdf-parse');
 
 const upload = multer({ storage: multer.memoryStorage() });
 
