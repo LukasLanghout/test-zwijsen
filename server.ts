@@ -9,7 +9,7 @@ import { supabase } from './src/lib/supabase.js';
 dotenv.config();
 
 const require = createRequire(import.meta.url);
-const pdfParse = require('pdf-parse');
+const pdfParse = require('pdf-parse/lib/pdf-parse');
 
 const upload = multer({ storage: multer.memoryStorage() });
 
