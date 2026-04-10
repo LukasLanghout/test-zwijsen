@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-zwijsen-blauw: #4A90C4;
+  --color-zwijsen-donkerblauw: #2C6A9A;
+  --color-zwijsen-lichtblauw: #EBF5FF;
+  --color-zwijsen-paars: #6B4C9A;
+  --color-correct: #28A745;
+  --color-fout: #DC3545;
+  --color-pending: #FFC107;
+  --color-review: #17A2B8;
+  --color-achtergrond: #F0F8FF;
+  --color-wit: #FFFFFF;
+  --color-grijs: #6C757D;
+  --color-hte-header: #4A90C4;
+  --color-hte-border: #2C6A9A;
+  --color-hte-bg: #EBF5FF;
+}
+
+body {
+  background-color: var(--color-achtergrond);
+  color: #333;
+}
