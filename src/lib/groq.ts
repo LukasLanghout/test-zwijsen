@@ -1,9 +1,8 @@
 import Groq from 'groq-sdk';
 import type { Exercise, ExerciseVariation, GenerateVariationsRequest } from './types';
 
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
-
 export async function extractExercisesFromPDF(text: string): Promise<Partial<Exercise>[]> {
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
   const completion = await groq.chat.completions.create({
     messages: [
       {
@@ -36,6 +35,7 @@ export async function generateVariations(
   exercise: Exercise,
   params: Partial<GenerateVariationsRequest>,
 ): Promise<Partial<ExerciseVariation>[]> {
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
   const count = params.count ?? 3;
   const difficulty = params.difficulty ?? 'same';
   const maxNumber = params.maxNumber ?? 1000;

@@ -27,6 +27,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(200).json({ variations: newVariations });
   } catch (error) {
     console.error('Variation generation error:', error);
-    res.status(500).json({ error: 'Failed to generate variations' });
+    const message = error instanceof Error ? error.message : String(error);
+    res.status(500).json({ error: message });
   }
 }

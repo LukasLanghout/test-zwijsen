@@ -108,6 +108,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(200).json({ success: true, count: savedExercises.length, exercises: savedExercises });
   } catch (error) {
     console.error('Upload error:', error);
-    res.status(500).json({ error: 'Failed to process PDF' });
+    const message = error instanceof Error ? error.message : String(error);
+    res.status(500).json({ error: message });
   }
 }
